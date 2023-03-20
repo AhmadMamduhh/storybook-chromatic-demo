@@ -5,10 +5,10 @@ orbs:
 
 jobs:
   publish_to_chromatic:
-    executor: circleci/node:16
     steps:
       - checkout
       - node/install-packages:
+          node-version: '16.13'
           pkg-manager: yarn
       - run:
           name: Publish to Chromatic
