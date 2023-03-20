@@ -1,21 +1,22 @@
 version: 2.1
 
-orbs:
-  node: circleci/node@4.7.0
-
 jobs:
-  publish:
+  build:
+    docker:
+      - image: circleci/node:14.18-buster
+
+    working_directory: ~/app
+
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: yarn
+
       - run:
-          name: Publish
+          name: Install dependencies
+          command: |
+            yarn install
+
+      - run:
+          name: Run Chromatic
           command: |
             yarn chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
-
-# workflows:
-#   version: 2
-#   Deploy:
-#     jobs:
-#       - publish_to_chromatic
+            
