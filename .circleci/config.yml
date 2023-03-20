@@ -5,7 +5,7 @@ orbs:
 
 jobs:
   publish_to_chromatic:
-    executor: node/default
+    executor: circleci/node:16
     steps:
       - checkout
       - node/install-packages:
