@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   node: circleci/node@4.7.0
-  
+
 jobs:
   publish_to_chromatic:
     steps:
@@ -16,6 +16,6 @@ jobs:
 
 workflows:
   version: 2
-  publish_to_chromatic:
+  Deploy:
     jobs:
       - publish_to_chromatic
