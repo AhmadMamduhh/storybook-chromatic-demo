@@ -14,8 +14,8 @@ jobs:
           command: |
             yarn chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
 
-workflows:
-  version: 2
-  Deploy:
-    jobs:
-      - publish_to_chromatic
+# workflows:
+#   version: 2
+#   Deploy:
+#     jobs:
+#       - publish_to_chromatic
