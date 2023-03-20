@@ -1,0 +1,21 @@
+version: 2.1
+
+jobs:
+  publish_to_chromatic:
+    docker:
+      - image: circleci/node:14.17.6
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install dependencies
+          command: |
+            yarn install
+
+      - run:
+          name: Publish to Chromatic 
+          command: |
+            yarn chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
