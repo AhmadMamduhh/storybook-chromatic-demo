@@ -10,7 +10,7 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          name: Publish to Chromatic
+          name: Publish
           command: |
             yarn chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
 
